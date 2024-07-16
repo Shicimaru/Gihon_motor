@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gihon-Landingpage</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP8ZjfvgE5YzqkexqT9n5G-T29ZO20Rdc&libraries=geometry,places&callback=initMap">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    
+   
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header -->
+<header class="header">
+    <a style="text-decoration: none;" href="#" class="logo"><img src="image/mtr.png" alt="">&nbsp; Gihon Motor</a>
+    <nav class="navbar"> 
+        <a href="#home">home</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        <a href="#kategori">kategori layanan</a>
+        <li class="navbar">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                produk
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#produk">Ban luar</a>
+                <a class="dropdown-item" href="#oli">Oli</a>
+                <a class="dropdown-item" href="#knalpot">Knalpot</a>
+                </div>
+            </li>
+        <a href="#footer">kontak</a>
+    </nav>
+    
+</header>
+<!-- header -->
+
+<!-- spanduk  -->
+<section class="home" id="home">
+    <div class="content">
+        <h3>Gihon <span>Motor</span> Modoinding</h3>
+        <p>Hati saki cari hugel, Badan saki cari dokter, <br> Motor saki cari Gihon Motor ya ges yah</p>
+        <button type="button" class="btn" data-toggle="modal" data-target="#kmunanye">Tanya-tanya</button>
+    </div>
+</section>
+<!-- spanduk -->
+
+<div class="modal fade "id="kmunanye">
+    <div class="modal-dialog">
+      <div class="modal-content fixed-top bg-white">
+          <h2 class="modal-title text-center text-dark"
+          id="exampleModalLongTitle"></h2>
+<div class="modal-body">
+    <label >Nama</label>
+    <input class="form-control" id="nama12" placeholder="Masukan Nama" required>
+<br>
+    <select class="form-control" id="opsi" required>
+        <option>Jenis Kerusakan</option>
+        <option>Internal</option>
+        <option>Eksternal</option>
+      </select>
+<br>
+<textarea name="Deskripsi" id="kro" cols="100" rows="10" placeholder="Kronologi lengkap" required></textarea>
+    
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+  <button type="button" class="btn btn-primary" onclick="kirim16();">Kirim</button>
+</div>
+</div>
+</div>
+</div>
+
+ <!-- JS API WA -->
+ <script>
+    function kirim16(){
+      var name = document.getElementById("nama12").value;
+      var jnsz = document.getElementById("opsi").value;
+      var kronolog = document.getElementById("kro").value;
+      if(name==""||jnsz==""||kronolog==""){
+				alert("Lengkapi formulir pemesanan");} 
+        else {
+      var link = "https://wa.me/6289698537750?text=" + 
+      "Pertanyaan konsumen%0A%0A"
+      + "Nama : "            + name + "%0A"
+      + "Jenis Kerusakan : "  + jnsz + "%0A"
+      + "Kronologi : "  + kronolog + "%0A"
+      window.open(link).focus();
+    }}
+  </script>
+  <!-- JS API WA -->
+
+
+
+
+<!-- kategori  -->
+<section class="kategori" id="kategori">
+    <h1 class="heading"> Kategori <span>Layanan</span> </h1>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/coba.PNG" alt="">
+            <h3>Jasa Service</h3>
+            <p>Gihon bengkel melayani berbagai problem diantaranya...</p>
+            <button type="button" class="btn" data-toggle="modal" data-target="#kateg1">Cek jow</button>
+        </div>
+        <div class="box">
+            <img src="image/coba2.PNG" alt="">
+            <h3>Jual Beli Suku Cadang Motor</h3>
+            <p>Terdapat berbagai produk diantaranya...</p>
+            <a href="#produk" class="btn">Lia-lia jow</a>
+        </div>
+        
+    </div>
+</section>
+<!-- kategori -->
+
+ <!-- Pop Up Jasa Servis-->
+ <div class="modal fade "id="kateg1">
+  <div class="modal-dialog">
+    <div class="modal-content fixed-top bg-dark">
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">KAMARI JOW NANTI TORANG 
+        YANG SERVIS, SAMUA ADA😉</h2><br><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Ganti ban</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Tampal ban</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Ganti oli</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Ganti busi</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Ganti gear</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Reparasi mesin</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Machine cleaning</h2><br>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-Bongkar pasang suku cadang</h2><BR></BR>
+        <h2 class="modal-title text-center text-white"
+        id="exampleModalLongTitle">-DAN LAIN LAIN</h2>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>
+</div>
+<!-- Pop Up Jasa Servis-->
+
+
+
+<!-- produk  -->
+<section class="produk" id="produk">
+    <h1 class="heading"> product <span>Ban Luar</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="image/bn250.PNG" alt="">
+            <h3>Ban Irc Trial <br>250/17</h3>
+            <p>Rp.185.000 Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="ban1" id="ban1"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/bn270.PNG" alt="">
+            <h3>Ban Irc trial <br>275/17 </h3>
+            <p>Rp.225.000 Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="ban2" id="ban2"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/bntbls.PNG" alt="">
+            <h3>Ban Irc Tubless <br>100/80-17</h3>
+            <p>Rp.295.000 Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="ban3" id="ban3"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/bnfdr.PNG" alt="">
+            <h3>Ban Fdr <br>120/70-17</h3>
+            <p>Rp.465.000 Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="ban4" id="ban4"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- produk -->
+
+<!-- produk  -->
+<section class="produk" id="oli">
+    <h1 class="heading">product<span>Oli</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="image/mpx08.PNG" alt="">
+            <h3>Oli Mpx<br>0,8 liter</h3>
+            <p>Rp.43.000</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="oli1" id="oli1"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/mpx1l.PNG" alt="">
+            <h3>Oli Mpx<br>1 liter</h3>
+            <p>Rp.58.000</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="oli2" id="oli2"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/mesran.PNG" alt="">
+            <h3>Oli Mesran <br>1 liter</h3>
+            <p>Rp.65.000</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="oli3" id="oli3"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/yamalube.PNG" alt="">
+            <h3>Oli Matic <br>0,8 liter</h3>
+            <p>Rp.55.000</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="oli4" id="oli4"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- produk -->
+
+<!-- produk  -->
+<section class="produk" id="knalpot">
+    <h1 class="heading"> product <span>Knalpot</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="image/proliner.PNG" alt="">
+            <h3>Proliner</h3>
+            <p>Rp.950.000 <br> Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="knalpot1" id="knalpot1"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/standarracing.PNG" alt=""> 
+            <h3>Matic standart racing</h3>
+            <p>Rp.385.000 <br> Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="knalpot2" id="knalpot2"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/crf.PNG" alt="">
+            <h3>Crf</h3>
+            <p>Rp.1.500.000 <br> Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="knalpot3" id="knalpot3"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/racing.PNG" alt="">
+            <h3>Racing</h3>
+            <p>Rp.215.000 <br> Free pemasangan</p>
+            <div class = "boxx">
+                <input type="number" class="form-control"  placeholder="input jumlah" 
+                name="knalpot4" id="knalpot4"oninput="this.value = this.value.replace(/[^0-9]/g, '')">>
+                <a class="btn" onclick="check()">beli</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- produk -->
+<!-- formpemesanan section ends -->
+<section class="book" id="book" >
+    <h1 class="heading">Form<span>Pemesanan</span> </h1>
+    <div class="bookbox" style="background: rgba(red, green, blue, alpha);">
+        <form onsubmit="return false">
+            <input type="text" placeholder="Nama" class="box" id="name" style="background: white;">
+            <input type="text" placeholder="Nomor Ponsel" class="box" style="background: white;" 
+            id="number"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <textarea type="text" placeholder="Klik Tombol Alamat" class="box"
+             style="background: white;" id="address" cols="30" rows="10"></textarea>
+            <textarea name="" class="box"  id="textarea" cols="30" style="background: white;" rows="10"></textarea>
+            <a href="#popup1" class="btn" style="background: #ff7800"> Alamat</a>
+            
+            <input type="submit" value="beli sekarang" class="btn" onclick="sap()" style="background: #ff7800">
+        </form>
+    </div>  
+</section>
+
+<!-- pop up map starts -->
+<div id="popup1" class="skinpop">
+    <div class="popup" id="popup">
+        <div class="p1">
+            <h6>Google Maps</h6>
+            <a href="#book" class="close" id="close">&times;</a>
+        </div>
+        <div class="p2">
+            <input id="searchInput"class="input-controls"type="text"placeholder="Cari Lokasi">
+            <div class="map"id="map"style="width: 100%; height: 30rem;"></div>
+            <div class="map-area">
+                <textarea type="text"name="location"id="location" placeholder="Alamat" cols="30" rows="10"></textarea>
+                <input type="hidden"name="lat"id="lat" placeholder="Latitude">
+                <input type="hidden"name="lng"id="lng" placeholder="Longitude">
+                <a href="#book" class="btn" id="pilih" onclick="pilih()">pilih</a>
+           </div>
+        </div>
+    </div>
+</div>
+<!-- pop up map ends -->
+<!-- formpemesanan section ends -->
+
+
+<!-- footer -->
+<section class="footer" id="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3><img src="image/mtr.png" alt=""><br>GHM Modoinding </h3>
+            <p>Jl. Raya Desa Makaaruyen, Kec. Modoinding, Kabupaten Minahasa Selatan, Sulawesi Utara</p>
+            <div class="share">
+                <a href="https://www.facebook.com/golda.shining" class="fab fa-facebook-f"></a>
+                <a href="https://api.whatsapp.com/send?phone=6282344103950" class="fab fa-whatsapp"></a>
+                <a href="https://instagram.com/goldavictoria?igshid=OGQ2MjdiOTE=" class="fab fa-instagram"></a>
+            </div>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="https://api.whatsapp.com/send?phone=6282344103950" class="links"> <i class="fas fa-phone"></i> +6282344103950 </a>
+            <a href="https://bit.ly/3XlkeoX" class="links"> <i class="fas fa-map-marker-alt">
+            </i> Modoinding Minsel Sulawesi Utara </a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d948.0081067843528!2d124.4465146550359!3d0.8036049977247394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1719598063866!5m2!1sid!2sid" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="credit"> Gihon Web by <span> Seily Tielung </span> | 2022 </div>
+</section>
+<!-- footer -->
+      
+<!-- JS marketplace -->
+<script>
+    function check() {
+        var ban1 = document.getElementById("ban1").value;
+        var z1="";
+        var markup
+        if(ban1 >= 1){
+            z1= document.getElementById("ban1").value +  " produk Ban Irc Trial 250/17," + "%0A" + "Total Rp. " + document.getElementById("ban1").value * 185000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var ban2 = document.getElementById("ban2").value;
+        var z2="";
+        var markup
+        if(ban2 >= 1){
+            z2= document.getElementById("ban2").value +  " produk Ban Irc Trial 275/17," + "%0A" + "Total Rp. " + document.getElementById("ban2").value * 225000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var ban3 = document.getElementById("ban3").value;
+        var z3="";
+        var markup
+        if(ban3 >= 1){
+            z3= document.getElementById("ban3").value +  " produk Ban Irc Tubless 100/80-17," + "%0A" + "Total Rp. " + document.getElementById("ban3").value * 295000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var ban4 = document.getElementById("ban4").value;
+        var z4="";
+        var markup
+        if(ban4 >= 1){
+            z4= document.getElementById("ban4").value +  " produk Ban Fdr 120/70-17," + "%0A" + "Total Rp. " + document.getElementById("ban4").value * 465000 + " yang harus dibayar" + "%0A%0A";}
+       
+
+        var oli1 = document.getElementById("oli1").value;
+        var z5="";
+        var markup
+        if(oli1 >= 1){
+            z5= document.getElementById("oli1").value +  " Oli Mpx 0,8 Liter," + "%0A" + "Total Rp. " + document.getElementById("oli1").value * 43000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var oli2 = document.getElementById("oli2").value;
+        var z6="";
+        var markup
+        if(oli2 >= 1){
+            z6= document.getElementById("oli2").value +  " Oli Mpx 1 Liter," + "%0A" + "Total Rp. " + document.getElementById("oli2").value * 58000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var oli3 = document.getElementById("oli3").value;
+        var z7="";
+        var markup
+        if(oli3 >= 1){
+            z7= document.getElementById("oli3").value +  " Oli Mesran 1 Liter," + "%0A" + "Total Rp. " + document.getElementById("oli3").value * 65000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var oli4 = document.getElementById("oli4").value;
+        var z8="";
+        var markup
+        if(oli4 >= 1){
+            z8= document.getElementById("oli4").value +  " Oli Matic 0,8 Liter," + "%0A" + "Total Rp. " + document.getElementById("oli4").value * 55000 + " yang harus dibayar" + "%0A%0A";}
+       
+            
+        var knalpot1 = document.getElementById("knalpot1").value;
+        var z9="";
+        var markup
+        if(knalpot1 >= 1){
+            z9= document.getElementById("knalpot1").value +  " Knalpot Proliner," + "%0A" + "Total Rp. " + document.getElementById("knalpot1").value * 950000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var knalpot2 = document.getElementById("knalpot2").value;
+        var z10="";
+        var markup
+        if(knalpot2 >= 1){
+            z10= document.getElementById("knalpot2").value +  " Knalpot Matic Standart Racing," + "%0A" + "Total Rp. " + document.getElementById("knalpot2").value * 385000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var knalpot3 = document.getElementById("knalpot3").value;
+        var z11="";
+        var markup
+        if(knalpot3 >= 1){
+            z11= document.getElementById("knalpot3").value +  " Knalpot Crf," + "%0A" + "Total Rp. " + document.getElementById("knalpot3").value * 1500000 + " yang harus dibayar" + "%0A%0A";}
+       
+        var knalpot4 = document.getElementById("knalpot4").value;
+        var z12="";
+        var markup
+        if(knalpot4 >= 1){
+            z12= document.getElementById("knalpot4").value +  " Knalpot Racing," + "%0A" + "Total Rp. " + document.getElementById("knalpot4").value * 215000 + " yang harus dibayar" + "%0A%0A";}
+       
+
+        var textarea = document.getElementById("textarea").value = z1+z2+z3+z4+z5+z6+z7+z8+z9+z10+z11+z12;
+        if(ban1>=1||ban2>=1||ban3>=1||ban4>=1||oli1>=1||oli2>=1||oli3>=1||oli4>=1||knalpot1>=1||knalpot2>=1||knalpot3>=1||knalpot4>=1){
+            window.location.href="#book";}
+        else{alert("Minimal Isi Jumlah Pada 1 Item Menu")}
+    }
+
+    function sap() {
+        var name = document.getElementById("name").value;
+        var address = document.getElementById("address").value;
+        var number = document.getElementById("number").value;
+        var textarea = document.getElementById("textarea").value;
+        if(name==""||address==""||number==""||textarea==""){
+				alert("Lengkapi formulir pemesanan");} 
+        else {
+		var url = "https://wa.me/62895802968918?text="
+        +"Rincian Pemesanan" + "%0a"
+        + "Nama: " + name + "%0a"
+        + "Alamat: " + address + "%0a"
+        + "Nomor Handphone: " + number + "%0a"
+        + "Pesanan: " + textarea + "%0a"
+        window.open(url, '_blank').focus();}}
+</script>
+
+
+
+<!-- pop up map starts -->
+<div id="popup1" class="skinpop">
+    <div class="popup" id="popup">
+        <div class="p1">
+            <h6>Google Maps</h6>
+            <a href="#book" class="close" id="close">&times;</a>
+        </div>
+        <div class="p2">
+            <input id="searchInput"class="input-controls"type="text"placeholder="Cari Lokasi">
+            <div class="map"id="map"style="width: 100%; height: 30rem;"></div>
+            <div class="map-area">
+                <textarea type="text"name="location"id="location" placeholder="Alamat" cols="30" rows="10"></textarea>
+                <input type="hidden"name="lat"id="lat" placeholder="Latitude">
+                <input type="hidden"name="lng"id="lng" placeholder="Longitude">
+                <a href="#book" class="btn" id="pilih" onclick="pilih()">pilih</a>
+           </div>
+        </div>
+    </div>
+</div>
+<!-- pop up map ends -->
+
+</body>
+<script>
+    function initialize() {
+       var latlng = new google.maps.LatLng(0.7243733, 124.3199316);
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: latlng,
+          zoom: 15
+        });
+        var marker = new google.maps.Marker({
+          map: map,
+          position: latlng,
+          draggable: true,
+          anchorPoint: new google.maps.Point(0, -29)
+       });
+       
+        var input = document.getElementById('searchInput');
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        var geocoder = new google.maps.Geocoder();
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+        var infowindow = new google.maps.InfoWindow();   
+        autocomplete.addListener('place_changed', function() {
+            infowindow.close();
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                window.alert("Autocomplete's returned place contains no geometry");
+                return;
+            }
+      
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+    
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);
+            }
+           
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);          
+        
+            bindDataToForm(place.formatted_address,place.geometry.location.lat(),place.geometry.location.lng());
+            infowindow.setContent(place.formatted_address);
+            infowindow.open(map, marker);       
+        });
+        
+        google.maps.event.addListener(marker, 'dragend', function() {
+            geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              if (results[0]) {        
+                  bindDataToForm(results[0].formatted_address,marker.getPosition().lat(),marker.getPosition().lng());
+                  infowindow.setContent(results[0].formatted_address);
+                  infowindow.open(map, marker);
+              }
+            }
+            });
+        });
+    }
+    function bindDataToForm(address,lat,lng){
+       document.getElementById('location').value = address;
+       document.getElementById('lat').value = lat;
+       document.getElementById('lng').value = lng;
+    
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    function pilih(){
+            var address = document.getElementById("address").value = document.getElementById("location").value + ", " + "Link Alamat = http://maps.google.com/maps?q=loc:" + document.getElementById("lat").value + "," + document.getElementById("lng").value;
+        }
+    </script>
+    
+    
+    </html>

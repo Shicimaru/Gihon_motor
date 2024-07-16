@@ -1,0 +1,48 @@
+<!-- Pop Up Pesanan 1 -->
+<div class="modal fade" id="popup11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ban Irc Trial 250/17</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <label>Nama</label>
+            <input class="form-control" id="nama11" placeholder="Masukan Nama">
+            <label >Alamat</label>
+            <input class="form-control" id="alom" placeholder="Masukan Alamat">
+            <label >Nomor Handphone</label>
+            <input class="form-control" id="nmr" placeholder="Masukan Nomor">
+            <label >Jumlah Pesanan </label>
+            <input class="form-control" id="jumla2" type="number" placeholder="Masukan Nomor">   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary" onclick="kirim11();">Cekout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pop Up Pesanan 1 -->
+
+                <!-- JS API WA -->
+                <script>
+                    function kirim11(){
+                      var nama = document.getElementById("nama11").value;
+                      var alamat = document.getElementById("alom").value;
+                      var nomor = document.getElementById("nmr").value;
+                      var jumlah = document.getElementById("jumla2").value;
+                      var link = "https://wa.me/6289698537750?text=" + 
+                      "Ban Irc Trial 250/17%0A%0A"
+                      + "Nama : "            + nama + "%0A"
+                      + "Alamat : "  + alamat + "%0A"
+                      + "Nomor : "  + nomor + "%0A"
+                      + "Jumlah : "          + jumlah + " Item%0A"
+                      + "Harga/Item : Rp.185.000%0A"
+                      + "Harga Total : Rp."        + jumlah * 185000 +"%0A";
+                      window.open(link).focus();
+                    }
+                  </script>
+                  <!-- JS API WA -->
